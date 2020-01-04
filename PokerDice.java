@@ -22,13 +22,13 @@ public class PokerDice {
             int [] counts = Counts(rolls);
             int length = counts.length;
             int hand = 0;
-            //Logic for case 7
+            //Logic for five of a kind
             for (int j = 0; j < length; j++) {
                 if (counts[j] == 5) {
                     hand = 7;
                 } 
             }
-            //Logic for case 6
+            //Logic for four of a kind
             if (hand < 7) {
                 for (int j = 0; j < length; j++) {
                     if (counts[j] == 4) {
@@ -36,7 +36,7 @@ public class PokerDice {
                     } 
                 }
             }
-            //Logic for case 5
+            //Logic for full house
             if (hand < 6) {
                 int counter3 = 0;
                 int counter2 = 0;
@@ -52,7 +52,7 @@ public class PokerDice {
                     hand = 5;
                 }
             }
-            //Logic for case 4
+            //Logic for three of a kind
             if (hand < 5) {
                 for (int j = 0; j < length; j++) {
                     if (counts[j] == 3) {
@@ -60,7 +60,7 @@ public class PokerDice {
                     } 
                 }
             }
-            //Logic for case 3 and 2
+            //Logic for 2 pair and 1 pair
              if (hand < 4) {
                 int newcounter = 0;
                 for (int j = 0; j < length; j++) {
@@ -77,7 +77,7 @@ public class PokerDice {
                 hand = 2;
               }
             }
-            //Logic for case 1
+            //Logic for high roll
             if (hand < 2) {
                  hand = 1;
             }   
